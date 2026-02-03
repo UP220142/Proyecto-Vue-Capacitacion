@@ -21,7 +21,8 @@ const cambiarFavorito = (title) => {
   <div class="container">
     <h1>APP</h1>
     <h2>Mi Post Favorito: {{ favorito }}</h2>
+    
     <BlogPost v-for="post in posts" :key="post.id" :title="post.title" :id="post.id" :body="post.body"
-      @cambiarFavorito="cambiarFavorito" />
+      @cambiarFavoritoNombre="cambiarFavorito" />
   </div>
 </template>
