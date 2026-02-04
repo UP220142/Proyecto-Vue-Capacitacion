@@ -2,11 +2,9 @@
 const emit = defineEmits(['next', 'prev']);
 
 const activarSiguiente = () => {
-    console.log("Me diste el siguiente");
     emit('next');
 };
 const activarAnterior = () => {
-    console.log("Me diste el anterior");
     emit('prev');
 };
 </script>
