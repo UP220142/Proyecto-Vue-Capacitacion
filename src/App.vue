@@ -1,6 +1,5 @@
 <script setup>
-import { ref } from 'vue';
-import { computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 
 import BlogPost from './components/BlogPost.vue'
 import PaginatePost from './components/PaginatePost.vue'
@@ -29,15 +28,47 @@ const prev = () => {
   fin.value -= postXpage
 };
 
-fetch("https://jsonplaceholder.typicode.com/posts")
-  .then((res) => res.json())
-  .then((data) => {
-    posts.value = data;
+/*     onMounted(async () => {
+      try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+        posts.value = await res.json();
+      } catch (error) {
+        console.log(error);
+      }
+      finally {
+        setTimeout(() => {
+          loading.value = false;
+        }, 500);
+      }
+    }); */
 
-  })
-  .finally(() => {
-    loading.value = false;
-  });
+/*      fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        posts.value = data;
+      })
+      .finally(() => {
+        loading.value = false;
+      }); */
+
+const fetchData = async () => {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    posts.value = await res.json();
+  } catch (error) {
+    console.log(error);
+  }
+  finally {
+    setTimeout(() => {
+      loading.value = false;
+    }, 500);
+  }
+};
+
+onMounted(() => {
+  fetchData();
+});
+
 </script>
 
 <template>
