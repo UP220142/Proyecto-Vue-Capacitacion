@@ -5,7 +5,7 @@ import BlogPost from './components/BlogPost.vue'
 import PaginatePost from './components/PaginatePost.vue'
 
 const posts = ref([]);
-const postXpage = 10
+const postXpage = 10;
 const inicio = ref(0)
 const fin = ref(postXpage)
 
