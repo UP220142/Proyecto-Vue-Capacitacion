@@ -18,11 +18,11 @@ const cambiarFavorito = (title) => {
 const next = () => {
   inicio.value += postXpage
   fin.value += postXpage
-}
+};
 const prev = () => {
   inicio.value -= postXpage
   fin.value -= postXpage
-}
+};
 
 fetch("https://jsonplaceholder.typicode.com/posts")
   .then((res) => res.json())
