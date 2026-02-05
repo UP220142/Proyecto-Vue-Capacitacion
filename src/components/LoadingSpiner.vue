@@ -1,0 +1,8 @@
+<template>
+    <div class="position-fixed top-0 start-0 w-100 d-flex flex-column align-items-center justify-content-start pt-3">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="text-center mt-2">Cargando...</p>
+    </div>
+</template>
